@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+    color: rgb(31, 127, 223);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+h2,
+h3 {
+    color: rgb(22, 83, 145);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-weight: bold;
+}
+
+body {
+    margin: 2em;
+}
+
+body,
+input[text] {
+    color: rgb(65, 65, 65);
+    font-family: Cambria, Georgia;
+}
+
+div {
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+}
+
+button {
+    color: white;
+    font-family: Cambria, Georgia;
+    background-color: rgb(22, 83, 145);
+    border: 0 black;
+    border-radius: 15%;
+    padding: 0.3em;
+    margin-left: 0.8em;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(0, 128, 255);
+}
+
+.deleteButton {
+    background-color: rgb(180, 0, 0);
+}
+
+.deleteButton:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+/* All */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}

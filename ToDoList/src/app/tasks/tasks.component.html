@@ -1,0 +1,44 @@
+<div class="page">
+
+    <h2>My To-do List</h2>
+
+    <div>
+        <form>
+            <div>
+                <input type="text" placeholder="New Task" name="newTaskName" />
+                <button>New</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <ul class="tasks">
+            <!-- *ngFor permet de parcourir un tableau 
+        [class.selected] on attribue une classe(css) pour la tâche sélectionnée  
+         (click) permet d'écouter le clic   -->
+            <li *ngFor="let task of tasks" [class.selected]="task === selectedTask" (click)="onSelect(task)">
+                <span class="badge">{{task.id}}</span> {{task.name}} <br />
+                <p>{{task.description}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Si une tâche est sélectionnée (si selectedTask est défini) -->
+    <div *ngIf="selectedTask">
+        <h2>{{selectedTask.name | uppercase}}</h2>
+        <p>Détails :</p>
+        <div><span>id: </span>{{selectedTask.id}}</div>
+        <div>
+            <div><label>name:</label></div>
+            <input type="text" value="{{selectedTask.name}}" />
+            <button>OK</button>
+        </div>
+        <div>
+            <div><label>description:</label></div>
+            <textarea>{{selectedTask.description}}</textarea>
+            <button>OK</button>
+        </div>
+        <button class="deleteButton">Delete</button>
+    </div>
+
+</div>
