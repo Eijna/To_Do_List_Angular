@@ -7,16 +7,17 @@
     <!-- ------------------------------- -->
     <div>
         <form>
+            <label for="taskInput">New task : </label>
             <div>
-                <input type="text" placeholder="New Task" name="newTaskName" />
-                <button>New</button>
+                <input type="text" #taskName required />
+                <button type="button" class="add-button" (click)="add(taskName.value); taskName.value=''">ADD</button>
             </div>
         </form>
     </div>
 
 
     <!-- ------------------------------- -->
-    <!-- LISTE DE TACHES -->
+    <!-- ------- LISTE DE TACHES ------- -->
     <!-- ------------------------------- -->
     <div>
         <ul class="tasks">
@@ -29,6 +30,7 @@
                 <a routerLink="/detail/{{task.id}}">
                     <span class="badge">{{task.id}}</span> {{task.name}}
                 </a>
+                <button type="button" class="deleteButton" (click)="delete(task)">X</button>
             </li>
 
 

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
 import { MessageService } from '../message.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TASKS } from '../mock-tasks';
 
 @Component({
   selector: 'app-tasks',
@@ -36,8 +38,18 @@ export class TasksComponent implements OnInit {
     //this.messageService.add(`TaskComponent: Selected task id={{task.id}}`);
   }
 
-  onCreate(task: Task): void {
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
 
+    TASKS.push({ id: 0, name: name, description: '' });
+
+    this.messageService.add(`Task "` + name + `" added`);
+  }
+
+  delete(task: Task): void {
+    this.tasks = this.tasks.filter(h => h !== task);
+    this.messageService.add(`Task deleted`);
   }
 
 }

@@ -20,6 +20,8 @@
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .tasks li.selected:hover {
