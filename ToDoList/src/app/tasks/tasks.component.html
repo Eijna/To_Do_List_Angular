@@ -25,18 +25,27 @@
                 [class.selected] : attribuer une classe(css) pour la tâche sélectionnée  
                 (click) : écouter le clic
                 -->
-            <li *ngFor="let task of tasks" [class.selected]="task === selectedTask" (click)="onSelect(task)">
+            <li *ngFor="let task of tasks">
+                <a routerLink="/detail/{{task.id}}">
+                    <span class="badge">{{task.id}}</span> {{task.name}}
+                </a>
+            </li>
+
+
+            <!--  ------ ANCIEN CODE SANS LE ROUTEUR ------
+                <li *ngFor="let task of tasks" [class.selected]="task === selectedTask" (click)="onSelect(task)">
                 <span class="badge">{{task.id}}</span> {{task.name}} <br />
                 <p>{{task.description}}</p>
-            </li>
+            </li> -->
+
         </ul>
     </div>
 
-
+    <!-- ----- ANCIEN CODE SANS LE ROUTEUR ----- -->
     <!-- ------------------------------- -->
     <!-- SELECTION ET DETAIL D'UNE TACHE -->
     <!-- ------------------------------- -->
     <!-- [task]="selectedTask" est une liaison de propriété Angular -->
-    <app-task-detail [task]="selectedTask"></app-task-detail>
+    <!-- <app-task-detail [task]="selectedTask"></app-task-detail> -->
 
 </div>

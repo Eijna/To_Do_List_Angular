@@ -6,12 +6,16 @@
     <div>
         <div><label>name:</label></div>
         <input [(ngModel)]="task.name" />
-        <button>OK</button>
     </div>
     <div>
         <div><label>description:</label></div>
         <textarea>{{task.description}}</textarea>
-        <button>OK</button>
     </div>
+    <button name="updateTaskButton" (click)="onUpdate(task)">Update</button>
     <button class="deleteButton" name="deleteTaskButton" (click)="onDelete(task)">Delete</button>
+
+    <div>
+        <button type="button" (click)="goBack()">BACK</button>
+    </div>
+
 </div>

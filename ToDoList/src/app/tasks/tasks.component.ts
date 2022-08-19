@@ -9,9 +9,11 @@ import { MessageService } from '../message.service';
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss']
 })
+
 export class TasksComponent implements OnInit {
 
-  selectedTask?: Task;
+  //ancien code
+  //selectedTask?: Task;
 
   tasks: Task[] = [];
 
@@ -29,8 +31,9 @@ export class TasksComponent implements OnInit {
 
   // On remplit l'objet selectedTask au clic d'une tâche
   onSelect(task: Task): void {
-    this.selectedTask = task;
-    this.messageService.add(`TaskComponent: Selected task id={{task.id}}`);
+    //ancien code
+    //this.selectedTask = task;
+    //this.messageService.add(`TaskComponent: Selected task id={{task.id}}`);
   }
 
   onCreate(task: Task): void {
