@@ -16,4 +16,8 @@ export class TaskDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onDelete(task: Task): void {
+
+  }
+
 }

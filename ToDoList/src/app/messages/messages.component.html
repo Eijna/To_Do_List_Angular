@@ -1,0 +1,10 @@
+<div *ngIf="messageService.messages.length">
+    <h3>Messages</h3>
+    <button class="clear" (click)="messageService.clear()">Clear</button>
+    <div *ngFor='let message of messageService.messages'> {{message}} </div>
+</div>
+
+<!--
+    *ngIf : afficher uniquement la zone des messages s’il y en a
+    *ngFor: parcourir liste des messages
+-->
