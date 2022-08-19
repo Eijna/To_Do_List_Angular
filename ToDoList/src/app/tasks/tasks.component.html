@@ -2,6 +2,9 @@
 
     <h2>My To-do List</h2>
 
+    <!-- ------------------------------- -->
+    <!-- BOUTON CREER une nouvelle tâche -->
+    <!-- ------------------------------- -->
     <div>
         <form>
             <div>
@@ -11,11 +14,17 @@
         </form>
     </div>
 
+
+    <!-- ------------------------------- -->
+    <!-- LISTE DE TACHES -->
+    <!-- ------------------------------- -->
     <div>
         <ul class="tasks">
-            <!-- *ngFor permet de parcourir un tableau 
-        [class.selected] on attribue une classe(css) pour la tâche sélectionnée  
-         (click) permet d'écouter le clic   -->
+            <!--
+                *ngFor : parcourir un tableau 
+                [class.selected] : attribuer une classe(css) pour la tâche sélectionnée  
+                (click) : écouter le clic
+                -->
             <li *ngFor="let task of tasks" [class.selected]="task === selectedTask" (click)="onSelect(task)">
                 <span class="badge">{{task.id}}</span> {{task.name}} <br />
                 <p>{{task.description}}</p>
@@ -23,22 +32,11 @@
         </ul>
     </div>
 
-    <!-- Si une tâche est sélectionnée (si selectedTask est défini) -->
-    <div *ngIf="selectedTask">
-        <h2>{{selectedTask.name | uppercase}}</h2>
-        <p>Détails :</p>
-        <div><span>id: </span>{{selectedTask.id}}</div>
-        <div>
-            <div><label>name:</label></div>
-            <input type="text" value="{{selectedTask.name}}" />
-            <button>OK</button>
-        </div>
-        <div>
-            <div><label>description:</label></div>
-            <textarea>{{selectedTask.description}}</textarea>
-            <button>OK</button>
-        </div>
-        <button class="deleteButton">Delete</button>
-    </div>
+
+    <!-- ------------------------------- -->
+    <!-- SELECTION ET DETAIL D'UNE TACHE -->
+    <!-- ------------------------------- -->
+    <!-- [task]="selectedTask" est une liaison de propriété Angular -->
+    <app-task-detail [task]="selectedTask"></app-task-detail>
 
 </div>

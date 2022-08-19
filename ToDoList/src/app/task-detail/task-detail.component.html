@@ -1,0 +1,17 @@
+<!-- *ngIf - Si une tâche est sélectionnée -->
+<div *ngIf="task">
+    <h2>{{task.name | uppercase}}</h2>
+    <p>Détails :</p>
+    <div><span>id: </span>{{task.id}}</div>
+    <div>
+        <div><label>name:</label></div>
+        <input [(ngModel)]="task.name" />
+        <button>OK</button>
+    </div>
+    <div>
+        <div><label>description:</label></div>
+        <textarea>{{task.description}}</textarea>
+        <button>OK</button>
+    </div>
+    <button class="deleteButton" name="deleteTaskButton">Delete</button>
+</div>
