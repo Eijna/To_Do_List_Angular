@@ -36,9 +36,6 @@ export class TaskDetailComponent implements OnInit {
 
   }
 
-  onDelete(task: Task): void {
-
-  }
 
   goBack(): void {
     this.location.back();
